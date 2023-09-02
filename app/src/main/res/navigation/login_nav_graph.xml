@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.oktravelapplictaion.login.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.oktravelapplictaion.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_FB_Missing_Data_Fragment"
+            app:destination="@id/FB_Missing_Data_Fragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_Gmail_Missing_Data_Fragment"
+            app:destination="@id/Gmail_Missing_Data_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FB_Missing_Data_Fragment"
+        android:name="com.example.oktravelapplictaion.login.FB_Missing_Data_Fragment"
+        android:label="fragment_f_b__missing__data_"
+        tools:layout="@layout/fragment_f_b__missing__data" >
+        <argument
+            android:name="fb_email"
+            app:argType="string" />
+        <argument
+            android:name="imgaeURL"
+            app:argType="string" />
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="userPassword"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/Gmail_Missing_Data_Fragment"
+        android:name="com.example.oktravelapplictaion.login.Gmail_Missing_Data_Fragment"
+        android:label="fragment_gmail__missing_data"
+        tools:layout="@layout/fragment_gmail__missing_data" >
+        <argument
+            android:name="gm_email"
+            app:argType="string" />
+        <argument
+            android:name="userPhotoUrl"
+            app:argType="string" />
+        <argument
+            android:name="userPassword"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundphoto"
+    tools:context=".ProfileFragment">
+
+    <TextView
+        android:id="@+id/profileName_another_UserProfileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/circleImageProfile_anotherUserProfileFragment"
+        app:layout_constraintStart_toStartOf="@+id/circleImageProfile_anotherUserProfileFragment"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_anotherUserProfileFragment"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/number_of_posts_another_profileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/circleImageProfile_anotherUserProfileFragment"
+        app:layout_constraintStart_toEndOf="@+id/circleImageProfile_anotherUserProfileFragment"
+        app:layout_constraintTop_toTopOf="@+id/circleImageProfile_anotherUserProfileFragment" />
+
+    <TextView
+        android:id="@+id/number_of_followers_another_progileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/number_of_posts_another_profileFragment_tv"
+        app:layout_constraintTop_toTopOf="@+id/number_of_posts_another_profileFragment_tv" />
+
+    <TextView
+        android:id="@+id/number_of_following_another_profileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/number_of_followers_another_progileFragment_tv"
+        app:layout_constraintTop_toTopOf="@+id/number_of_followers_another_progileFragment_tv" />
+
+    <TextView
+        android:id="@+id/posts_another_profileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Posts"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_posts_another_profileFragment_tv"
+        app:layout_constraintStart_toStartOf="@+id/number_of_posts_another_profileFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_posts_another_profileFragment_tv" />
+
+    <TextView
+        android:id="@+id/followers_another_profileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Followers"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_followers_another_progileFragment_tv"
+        app:layout_constraintStart_toStartOf="@+id/number_of_followers_another_progileFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_followers_another_progileFragment_tv" />
+
+    <TextView
+        android:id="@+id/following_anotherprofileFragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Following"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/number_of_following_another_profileFragment_tv"
+        app:layout_constraintStart_toStartOf="@+id/number_of_following_another_profileFragment_tv"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_following_another_profileFragment_tv" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/circleImageProfile_anotherUserProfileFragment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/icon_profile_white" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefresh_anotherUserProfileFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileName_another_UserProfileFragment_tv">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/postViewPager_anotherUserProfileFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileName_profileFragment_tv"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints">
+
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

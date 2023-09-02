@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/test_to_like_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ProgressBar
+        android:id="@+id/post_item_progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/post_item_profileImage_iv"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/post_item_profileName_tv"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/post_item_title_tv"-->
+    <!--        app:layout_constraintVertical_bias="0.0"-->
+    <!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+    <TextView
+        android:id="@+id/post_item_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_text_to_post"
+        android:clickable="true"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="name of the place"
+        android:textColor="#FFFFFF"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/post_item_profileName_tv"
+        app:layout_constraintStart_toEndOf="@+id/circleImageProfile_postItem"
+        app:layout_constraintTop_toTopOf="@+id/circleImageProfile_postItem"
+        tools:ignore="UnknownId" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/circleImageProfile_postItem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/test_to_like_btn"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/icon_profile_white" />
+
+    <TextView
+        android:id="@+id/post_item_profileName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_text_to_post"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="profilE name"
+        android:textColor="#FAF6F6"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/circleImageProfile_postItem"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_postItem" />
+
+    <ImageButton
+        android:id="@+id/post_item_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_details_post_item_ibtn"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_btn"
+        app:srcCompat="@drawable/icon_location_new" />
+
+<!--    <Button-->
+<!--        android:id="@+id/post_item_location_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#00FFFFFF"-->
+<!--        app:icon="@drawable/icon_location_new"-->
+<!--        tools:ignore="UnknownId"-->
+<!--        tools:layout_editor_absoluteX="120dp"-->
+<!--        tools:layout_editor_absoluteY="137dp" />-->
+
+    <TextView
+        android:id="@+id/post_item_description_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/background_text_to_post"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="description"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/test_to_like_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/post_item_like_ibtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_item_numberOfLikes_tv"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_btn"
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+    <TextView
+        android:id="@+id/post_item_numberOfLikes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="number of likes"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/share_post_post_item_ibtn"
+        app:layout_constraintEnd_toEndOf="@+id/share_post_post_item_ibtn"
+        app:layout_constraintStart_toStartOf="@+id/share_post_post_item_ibtn" />
+
+    <ImageButton
+        android:id="@+id/post_item_liked_ibtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="#005C1616"
+        android:tint="#EF5A5A"
+        app:layout_constraintBottom_toTopOf="@+id/post_item_numberOfLikes_tv"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_btn"
+        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+    <ImageButton
+        android:id="@+id/post_details_post_item_ibtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_item_description_tv"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_btn"
+        app:srcCompat="@drawable/icon_post_details" />
+
+    <ImageButton
+        android:id="@+id/share_post_post_item_ibtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_item_location_btn"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_btn"
+        app:srcCompat="@drawable/icon_share_post" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,261 @@
+@startuml
+
+class Post {
+    String postID
+    String postTitle
+    String postDescription
+    int likes
+    String userName
+    String categoriesList
+    String videoUrl
+    boolean isDeleted
+    float longitude
+    float latitude
+    Long updateDate=new Long(0)
+    public void setUpdateDate(Long updateDate)
+    public Post(String postTitle,
+    String postDescription, String userName, int likes, String categoriesList, String videoUrl, float longitude, float latitude)
+    public String getPostDescription()
+    public void setPostDescription(String postDescription)
+    public float getLongitude()
+    public void setLongitude(float longitude)
+    public float getLatitude()
+    public void setLatitude(float latitude)
+    public boolean isDeleted()
+    public void setDeleted(boolean deleted)
+    public String getPostID()
+    public void setPostID(String postID)
+    public int getLikes()
+    public void setLikes(int likes)
+    public String getUserName()
+    public void setUserName(@NonNull String userName)
+    public String getCategoriesList()
+    public void setCategoriesList(String categoriesList)
+    public String getPostTitle()
+    public void setPostTitle(String postTitle)
+    public String getVideoUrl()
+    public void setVideoUrl(String videoUrl)
+    public HashMap<String, Object> toJson()
+    public static Post create(Map<String, Object> json)
+    public Long getUpdateDate()
+}
+
+
+class User {
+    String userName
+    String password
+    String email
+    String phoneNumber
+    String imageUrl
+    String likedList
+    public User(){}
+    public User(String userName, String password, String email, String phoneNumber, String imageUrl)
+    public String getUserName()
+    public void setUserName(String userName)
+    public String getPassword()
+    public void setPassword(String password)
+    public String getEmail()
+    public void setEmail(String email)
+    public String getPhoneNumber()
+    public void setPhoneNumber(String phoneNumber)
+    public String getImageUrl()
+    public void setProfileImageUrl(String url)
+    public String getLikedList()
+    public void setLikedList(String likedList)
+    public HashMap<String, Object> toJson()
+    public static User create(Map<String, Object> json)
+}
+
+
+ class Location {
+    String postId
+    String locationName
+    float longitude
+    float latitude
+    boolean is_deleted
+    public Location(@NonNull String postId, @NonNull String locationName, float longitude, float latitude)
+    public boolean isIs_deleted()
+    public void setIs_deleted(boolean is_deleted)
+    public String getPostId()
+    public void setPostId(@NonNull String postId)
+    public String getLocationName()
+    public void setLocationName(@NonNull String locationName)
+    public float getLongitude()
+    public void setLongitude(float longitude)
+    public float getLatitude()
+    public void setLatitude(float latitude)
+    public Map<String, Object> toJson()
+    public static Location create(Map<String, Object> json)
+}
+
+
+class ModelMongo {
+    public static Retrofit retrofit
+    private static Retrofit retrofitForUpload;
+    public static String COLMAN_SERVER_URL= "http://193.106.55.132:3000/";
+    public static String LOCALHOST_URL= "http://127.0.0.1:3000/";
+    public static Retrofit getRetrofitForUpload()
+    public void addUser(User user, Model.AddUserListener listener)
+    public void getUserByUserName(HashMap map, Model.GetUserByUserNameByListener listener)
+    public void checkLogin(HashMap map, Model.LoginListener listener)
+    public void loginApps(HashMap map, Model.LoginAppsListener listener)
+    public void addPost(Post post, String access_token, Model.AddPostListener listener)
+    public void logOut(String token, Model.LogoutListener listener)
+    public void getAllLocations(Model.GetAllLocationsListener listener)
+    public void editUser(HashMap<String, String> map, Model.EditUserListener listener)
+    public void getPostById(String post_id, Model.GetPostByIdListener listener)
+    public void editPost(Post post, String access_token, Model.EditPostListener listener)
+    public void deletePost(String postid, String access_token, Model.EditPostListener listener)
+    public void follow(HashMap<String, String> map, String access_token, Model.FollowListener followListener)
+    public void checkIfFollow(HashMap<String,String> map, Model.checkIfFollowListener listener)
+    public void unfollow(HashMap<String, String> map, String access_token, Model.unFollowListener listener)
+    public void partialSearch(HashMap<String, String> map, Model.partialSearchListener listener)
+    public void postPartialSearch(HashMap<String, String> map, Model.postPartialSearchListener listener)
+    public interface GetAllPostsListener
+    public void getAllPosts(Long lastUpdateDate, GetAllPostsListener listener)
+    public interface GetAllPostsbyUserName
+    public void getPostsbyUserName(String userName, GetAllPostsbyUserName listener)
+    public void addPostIdToLikedList(HashMap<String, String> map, Model.AddPostIdToLikedListListener listener)
+    public void getLikedListByUserName(String userName, Model.GetLikedListListener listener)
+    public void removePostIDFromLikedList(HashMap<String, String> map, Model.RemovePostIDFromLikedListListener listener)
+    public void getLikedLocations(String userName, Model.GetLikedLocationsListener listener)
+    public void getMyPostsLocations(String userName, Model.GetMyPostsLocationsListener listener)
+    public interface GetAllLikedPostsbyUserName
+    public void getLikedPostsbyUserName(String userName, GetAllLikedPostsbyUserName listener)
+    public void locationSearch(HashMap<String, String> map, Model.locationSearchListener listener)
+    public void getFollowersByUserName(String userName, Model.GetFollowersByUserNameListener listener)
+    public void getFollowingByUserName(String userName, Model.GetFollowingByUserNameListener listener)
+}
+
+
+class Model {
+    public static final Model instance
+    public static ArrayList<MarkerOptions> locationsList
+    public static Boolean isFromNewPost
+    public static Boolean isFromEditPost
+    public static Boolean isFromFeed
+    public Executor executor
+    public Handler mainThread
+    ModelFirebase modelFirebase
+    ModelMongo modelMongo
+    public static String COLMAN_SERVER_URL= "http://193.106.55.132:3000/";
+    public static String LOCALHOST_URL= "http://127.0.0.1:3000/";
+    MutableLiveData<PostsListLoadingState> postsListLoadingState=new MutableLiveData<PostsListLoadingState>();
+    MutableLiveData<List<Post>> postsList=new MutableLiveData<List<Post>>();
+    MutableLiveData<PostsListLoadingState> postsProfileListLoadingState=new MutableLiveData<PostsListLoadingState>();
+    MutableLiveData<List<Post>> postsProfileList=new MutableLiveData<List<Post>>();
+    private Model()
+    public LiveData<PostsListLoadingState> getPostsProfileListLoadingState()
+    public LiveData<List<Post>> getAllProfilePosts(String userName, String likedPosts_or_myPosts)
+    public void refreshProfilePostsList(String userName, String likedPosts_or_myPosts)
+    public LiveData<PostsListLoadingState> getPostsListLoadingState()
+    public LiveData<List<Post>> getAll()
+    public void refreshPostsList()
+    public interface SaveVideoListener
+    public void saveVideo(Uri videoSelected, String videoName, SaveVideoListener listener)
+    public interface fireBaseAuthIfUserExistListener
+    public void loginAuth(String email, String password, fireBaseAuthIfUserExistListener listener)
+    public interface GetAllUsersListener
+    public void getAllUsers(GetAllUsersListener listener)
+    public interface AddUserListener
+    public void addUser(User user, AddUserListener listener)
+    public interface AddLocationListener
+    public void addLocation(Location location, AddLocationListener listener)
+    public interface AddPostListener
+    public void addPost(Post post, String access_token, AddPostListener listener)
+    public interface FollowListener
+    public void follow(HashMap<String, String> map, String access_token, FollowListener listener)
+    public interface unFollowListener
+    public void unfollow(HashMap<String, String> map, String access_token, unFollowListener listener)
+    public interface checkIfFollowListener
+    public void checkIfFollow(HashMap<String, String> map, checkIfFollowListener listener)
+    public interface LogoutListener
+    public void logOut(String token, LogoutListener listener)
+    public interface LoginListener
+    public String checkLogin(HashMap map, LoginListener listener)
+    public interface LoginAppsListener
+    public String loginApps(HashMap map, LoginAppsListener listener)
+    public interface GetUserByUserNameByListener
+    public User checkIfUserExist(HashMap map, GetUserByUserNameByListener listener)
+    public interface partialSearchListener
+    public List<User> partialSearch(HashMap<String, String> map, partialSearchListener listener)
+    public interface GetFollowersByUserNameListener
+    public List<User> getFollowersByUserName(String userName, GetFollowersByUserNameListener listener)
+    public interface postPartialSearchListener
+    public List<User> postPartialSearch(HashMap<String, String> map, postPartialSearchListener listener)
+    public interface GetUserByEmailListener
+    public interface locationSearchListener
+    public List<Location> locationSearch(HashMap<String, String> map, locationSearchListener listener)
+    public User checkIfEmailExist(String email, GetUserByEmailListener listener)
+    public interface SaveImageListener
+    public void saveImage(Bitmap imageBitmap, String imageName, SaveImageListener listener)
+    public interface GetAllLocationsListener
+    public void getAllLocations(GetAllLocationsListener listener)
+    public interface GetPostByIdListener
+    public Post getPostById(String post_id, GetPostByIdListener listener)
+    public interface EditUserListener
+    public void editUser(HashMap<String,String> map, EditUserListener listener)
+    public interface EditPostListener
+    public void editPost(Post post, String access_token, EditPostListener listener)
+    public interface DeletePostListener
+    public void deletePost(String postid, String access_token, EditPostListener listener)
+    public interface EditLocationListener
+    public void editLocation(Location location, EditLocationListener listener)
+    public interface AddPostIdToLikedListListener
+    public void addPostIdToLikedList(HashMap<String, String> map, AddPostIdToLikedListListener listener)
+    public interface GetLikedListListener
+    public void getLikedListByUserName(String userName, GetLikedListListener listener)
+    public interface RemovePostIDFromLikedListListener
+    public void removePostIDFromLikedList(HashMap<String, String> map, RemovePostIDFromLikedListListener listener)
+    public interface UploadVideoListener
+    public String uploadVideo(File file, UploadVideoListener listener)
+    public interface GetLikedLocationsListener
+    public void getLikedLocations(String userName, GetLikedLocationsListener listener)
+    public interface GetMyPostsLocationsListener
+    public void getMyPostsLocations(String userName, GetMyPostsLocationsListener listener)
+    public interface GetFollowingByUserNameListener
+    public List<User> getFollowingByUserName(String userName, GetFollowingByUserNameListener listener)
+    public interface UploadImageListener
+    public String uploadImage(File file, UploadImageListener listener)
+}
+
+
+abstract class AppLocalDbRepository extends RoomDatabase {
+    public abstract UserDao userDao();
+    public abstract PostDao postDao();
+    public abstract LocationDao locationDao();
+}
+
+
+class AppLocalDb{
+    static public AppLocalDbRepository db
+}
+
+
+interface LocationDao {
+    List<Location> getAll();
+    void insertAll(Location... locations);
+    void delete(Location location);
+}
+
+
+interface PostDao {
+    List<Post> getAll();
+    void insertAll(Post... posts);
+    void delete(Post post);
+}
+
+
+interface UploadApis {
+    Call<String> uploadVideo(@Part MultipartBody.Part part, @Part("somedata") RequestBody requestBody );
+}
+
+
+interface UserDao {
+    List<User> getAll();
+    void insertAll(User... users);
+    void delete(User user);
+}
+
+
+@enduml

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundphoto"
+    tools:context=".EditProfileFragment">
+
+    <TextView
+        android:id="@+id/title_editProfile_fragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Edit profile"
+        android:textColor="#3D6309"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="170dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camera_editProfile_fragment_ibtn">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="@string/username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName_editProfile_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="@string/phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_editProfile_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/circleImageProfile_editprofileFragment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_editProfile_fragment_tv"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/icon_profile_white" />
+
+<!--    <com.facebook.login.widget.ProfilePictureView-->
+<!--        android:id="@+id/fb_edit_profile_pic"-->
+<!--        android:layout_width="113dp"-->
+<!--        android:layout_height="105dp"-->
+<!--        android:layout_marginTop="136dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:src="@tools:sample/avatars" />-->
+
+    <ImageButton
+        android:id="@+id/gallery_editProfile_fragment_ibtn"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="18dp"
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintStart_toStartOf="@+id/circleImageProfile_editprofileFragment"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_editprofileFragment" />
+
+    <ImageButton
+        android:id="@+id/camera_editProfile_fragment_ibtn"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="18dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintEnd_toEndOf="@+id/circleImageProfile_editprofileFragment"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_editprofileFragment" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_editProfile_fragment_pb"
+        style="?android:attr/progressBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="374dp" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cencel_editProfile_fragment_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/save_editProfile_fragment_btn"
+        android:layout_toLeftOf="@id/save_editProfile_fragment_btn"
+        android:backgroundTint="#3D6309"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/save_editProfile_fragment_btn"
+        app:layout_constraintEnd_toStartOf="@+id/save_editProfile_fragment_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_editProfile_fragment_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#3D6309"
+        android:text="@string/Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cencel_editProfile_fragment_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

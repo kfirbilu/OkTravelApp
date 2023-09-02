@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <VideoView
+        android:id="@+id/test_to_like_post_details_btn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/category_8_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_7_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_7_postDetails_cb" />
+
+    <TextView
+        android:id="@+id/post_details_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_text_to_post"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="name of the place"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/post_details_profileName_tv"
+        app:layout_constraintStart_toEndOf="@+id/circleImageProfile_post_details"
+        tools:ignore="UnknownId" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/circleImageProfile_post_details"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/test_to_like_post_details_btn"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/icon_profile_white" />
+
+    <TextView
+        android:id="@+id/post_details_profileName_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_text_to_post"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="profilE name"
+        android:textColor="#FAF6F6"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/circleImageProfile_post_details"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_post_details" />
+
+    <ImageButton
+        android:id="@+id/post_details_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_details_description_tv"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_post_details_btn"
+        app:srcCompat="@drawable/icon_location_new" />
+
+
+    <TextView
+        android:id="@+id/post_details_description_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/background_text_to_post"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="description"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/test_to_like_post_details_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/share_post_post_details_ibtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_details_location_btn"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_post_details_btn"
+        app:srcCompat="@drawable/icon_share_post" />
+
+    <CheckBox
+        android:id="@+id/category_1_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/test_to_like_post_details_btn"
+        app:layout_constraintTop_toBottomOf="@+id/post_details_profileName_tv" />
+
+    <CheckBox
+        android:id="@+id/category_2_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_1_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_1_postDetails_cb" />
+
+    <CheckBox
+        android:id="@+id/category_5_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_4_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_4_postDetails_cb" />
+
+    <CheckBox
+        android:id="@+id/category_6_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_5_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_5_postDetails_cb" />
+
+    <CheckBox
+        android:id="@+id/category_7_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_6_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_6_postDetails_cb" />
+
+    <CheckBox
+        android:id="@+id/category_3_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_2_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_2_postDetails_cb" />
+
+    <CheckBox
+        android:id="@+id/category_4_postDetails_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/category_3_postDetails_cb"
+        app:layout_constraintTop_toBottomOf="@+id/category_3_postDetails_cb" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

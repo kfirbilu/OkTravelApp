@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundphoto"
+    tools:context=".login.SignUpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/profileimage_editProfile_fragment"-->
+<!--        android:layout_width="110dp"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/title_editProfile_fragment_tv"-->
+<!--        app:srcCompat="@drawable/person"></ImageView>-->
+<!--    &lt;!&ndash;@+id/submit_btn_signup_fragment&ndash;&gt;-->
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="0dp"
+        android:layout_height="361dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="35dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleImageProfile_signupFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="32dp"
+            android:scrollbarSize="2dp"
+            app:boxBackgroundColor="#90FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="#C1C1C1"
+            app:hintTextColor="#4f4f4f"
+            tools:layout_editor_absoluteX="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userName_editProfile_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="14dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="32dp"
+            android:scrollbarSize="2dp"
+            app:boxBackgroundColor="#90FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="#C1C1C1"
+            app:hintTextColor="#4f4f4f"
+            tools:layout_editor_absoluteX="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_editProfile_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_password"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textSize="14dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="32dp"
+            android:scrollbarSize="2dp"
+            app:boxBackgroundColor="#90FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="#C1C1C1"
+            app:hintTextColor="#4f4f4f"
+            tools:layout_editor_absoluteX="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verifyPassword_signup_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_password"
+                android:hint="@string/verifypassword"
+                android:inputType="textPassword"
+                android:textSize="14dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="32dp"
+            android:scrollbarSize="2dp"
+            app:boxBackgroundColor="#90FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="#C1C1C1"
+            app:hintTextColor="#4f4f4f"
+            tools:layout_editor_absoluteX="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_signup_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_mail"
+                android:hint="@string/email"
+                android:inputType="text"
+                android:textSize="14dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_marginTop="32dp"
+            android:scrollbarSize="2dp"
+            app:boxBackgroundColor="#90FFFFFF"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="#C1C1C1"
+            app:hintTextColor="#4f4f4f"
+            tools:layout_editor_absoluteX="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_editProfile_fragment_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_phone"
+                android:hint="@string/phone"
+                android:inputType="text"
+                android:textSize="14dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/circleImageProfile_signupFragment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_editProfile_fragment_tv"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/icon_profile_white" />
+
+    <TextView
+        android:id="@+id/title_editProfile_fragment_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sign up"
+        android:textColor="#3D6309"
+        android:textSize="45sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gallery_editProfile_fragment_ibtn"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="-45dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/circleImageProfile_signupFragment"
+        app:layout_constraintStart_toStartOf="@+id/circleImageProfile_signupFragment"
+        app:srcCompat="@drawable/icon_gallery" />
+
+    <ImageButton
+        android:id="@+id/camera_editProfile_fragment_ibtn"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="-50dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/circleImageProfile_signupFragment"
+        app:layout_constraintEnd_toEndOf="@+id/circleImageProfile_signupFragment"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cencel_editProfile_fragment_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/save_editProfile_fragment_btn"
+        android:layout_toLeftOf="@id/save_editProfile_fragment_btn"
+        android:backgroundTint="#3D6309"
+        android:text="@string/cancel"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/save_editProfile_fragment_btn"
+        app:layout_constraintEnd_toStartOf="@+id/save_editProfile_fragment_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_editProfile_fragment_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#3D6309"
+        android:text="@string/sign_up"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cencel_editProfile_fragment_btn"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_editProfile_fragment_pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

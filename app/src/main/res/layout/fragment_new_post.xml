@@ -1,0 +1,256 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundphoto"
+        tools:context=".fragment_new_post_fragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <Button
+            android:id="@+id/upload_btn_newpost_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="#3D6309"
+            android:text="Upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat3" />
+
+        <VideoView
+            android:id="@+id/video_newpost_fragment"
+            android:layout_width="320dp"
+            android:layout_height="193dp"
+            android:layout_marginTop="10dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_imagebtn_newpost_fragment" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/record_btn_newpost_fragment">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:hint="@string/Title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/title_newpost_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#8DFFFFFF"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:hint="@string/description">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/description_newpost_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="139dp"
+                    android:background="#8DFFFFFF"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="#000000" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:background="#8DFFFFFF"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:backgroundTintMode="@null"
+                android:text="Categories"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:layout_editor_absoluteX="-53dp">
+
+                <CheckBox
+                    android:id="@+id/families_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For families"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="571dp" />
+
+                <CheckBox
+                    android:id="@+id/water_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water trails"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/food_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/romantic_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romantic"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/kids_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kids friendly"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/viewpoint_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Viewpoints"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/spring_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Springs"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+
+                <CheckBox
+                    android:id="@+id/picnic_cb_newpost_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Picnic"
+                    android:textColor="#000000"
+                    android:textSize="13sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ImageButton
+            android:id="@+id/location_imagebtn_newpost_fragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:background="#00FFFFFF"
+            android:visibility="visible"
+            app:layout_constraintHeight="match_parent"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintHeight_max="wrap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth="wrap_content"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintWidth_max="wrap"
+            app:layout_constraintWidth_min="wrap"
+            app:srcCompat="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/location_tv_newpost_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="3dp"
+            android:text="My location"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/location_imagebtn_newpost_fragment"
+            app:layout_constraintStart_toEndOf="@+id/location_imagebtn_newpost_fragment" />
+
+        <ProgressBar
+            android:id="@+id/progressBar_new_post_fragment_pb"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/gallery_btn_newpost_fragment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/video_newpost_fragment"
+            app:srcCompat="@drawable/icon_gallery" />
+
+        <ImageButton
+            android:id="@+id/record_btn_newpost_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="69dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="80dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/video_newpost_fragment"
+            app:srcCompat="@drawable/icon_take_a_video" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

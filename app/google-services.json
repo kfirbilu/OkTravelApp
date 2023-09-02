@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411154317552",
+    "project_id": "oktravel-new",
+    "storage_bucket": "oktravel-new.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411154317552:android:b5fe591960df1c32170235",
+        "android_client_info": {
+          "package_name": "com.example.oktravelapplictaion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411154317552-h1q5a6eoopcv322iqsqefotv87ngihgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3obUMju9J68OiVQ_PTxmJTC5hvRtCHlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411154317552-h1q5a6eoopcv322iqsqefotv87ngihgk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <item name="android:state_hovered">true</item>
+        <item name="colorPrimary">#3D6309</item>
+        <item name="colorPrimaryDark">#3D6309</item>
+        <item name="colorAccent">#3D6309</item>
+    </style>
+
+    <style name="FullScreen" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
+    </style>
+
+    <style name="icon_newpost_white" parent="ThemeOverlay.AppCompat">
+        <item name="android:state_hovered">true</item>
+        <item name="android:fillColor">#3D6309</item>
+    </style>
+
+
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

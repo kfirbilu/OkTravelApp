@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.oktravelapplictaion.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.oktravelapplictaion.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.oktravelapplictaion.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.oktravelapplictaion.feed.feedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_feedFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.oktravelapplictaion.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_fragment_edit_post"
+            app:destination="@id/fragment_edit_post" />
+        <argument
+            android:name="post_id"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="longitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="latitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_mapFragment_to_postFromMapFragment"
+            app:destination="@id/postFromMapFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_postDetailsFragment22"
+            app:destination="@id/postDetailsFragment2" />
+        <action
+            android:id="@+id/action_mapFragment_to_newPostFragment2"
+            app:destination="@id/newPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPostFragment"
+        android:name="com.example.oktravelapplictaion.NewPostFragment"
+        android:label="Create post"
+        tools:layout="@layout/fragment_new_post" >
+        <argument
+            android:name="longitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="latitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_newPostFragment_to_fragment_new_post_details"
+            app:destination="@id/fragment_new_post_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.oktravelapplictaion.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+
+            android:id="@+id/action_profileFragment_to_fragment_edit_post"
+            app:destination="@id/fragment_edit_post" />
+        <action
+
+
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_postDetailsFragment2"
+            app:destination="@id/postDetailsFragment2" />
+        <action
+            android:id="@+id/action_profileFragment_to_followFragment"
+            app:destination="@id/followFragment" />
+    </fragment><action android:id="@+id/action_global_feedFragment" app:destination="@id/feedFragment"/>
+    <fragment
+
+        android:id="@+id/fragment_edit_post"
+        android:name="com.example.oktravelapplictaion.fragment_edit_post"
+        android:label="fragment_edit_post"
+        tools:layout="@layout/fragment_edit_post" >
+        <argument
+            android:name="post_id"
+            app:argType="string" />
+        <argument
+            android:name="longitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="latitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_fragment_edit_post_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+
+
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.oktravelapplictaion.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <argument
+            android:name="oldUserName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/fragment_new_post_details"
+        android:name="com.example.oktravelapplictaion.fragment_new_post_details"
+        android:label="fragment_new_post_details" >
+        <argument
+            android:name="longitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="latitude"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="videoUri"
+            app:argType="android.net.Uri" />
+
+        android:id="@+id/PostFromMapFragment"
+        android:name="com.example.oktravelapplictaion.PostFromMapFragment"
+        android:label="PostFromMapFragment">
+        <argument
+            android:name="postId"
+            android:defaultValue='""'
+            app:argType="string" />
+        <action
+            android:id="@+id/action_PostFromMapFragment_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotherUserProfileFragment"
+        android:name="com.example.oktravelapplictaion.AnotherUserProfileFragment"
+        android:label="fragment_another_user_profile"
+        tools:layout="@layout/fragment_another_user_profile">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_anotherUserProfileFragment_to_postDetailsFragment2"
+            app:destination="@id/postDetailsFragment2" />
+        <deepLink
+            android:id="@+id/deepLink3"
+            app:uri="http://oktravel.co.il/users/{userName}" />
+        <action
+            android:id="@+id/action_anotherUserProfileFragment_to_followFragment"
+            app:destination="@id/followFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postFromMapFragment"
+        android:name="com.example.oktravelapplictaion.PostFromMapFragment"
+        android:label="PostFromMapFragment">
+        <argument
+            android:name="postId"
+            android:defaultValue='""'
+            app:argType="string" />
+        <action
+            android:id="@+id/action_postFromMapFragment_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment2"
+        android:name="com.example.oktravelapplictaion.PostDetailsFragment"
+        android:label="fragment_post_details"
+        tools:layout="@layout/fragment_post_details">
+        <argument
+            android:name="postID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_postDetailsFragment2_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_postDetailsFragment2_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="http://oktravel.co.il/posts/{postID}" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.oktravelapplictaion.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/tabsSearchFragment"
+        android:name="com.example.oktravelapplictaion.TabsSearchFragment"
+        android:label="fragment_tabs_search"
+        tools:layout="@layout/fragment_tabs_search" >
+        <action
+            android:id="@+id/action_tabsSearchFragment_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+        <action
+            android:id="@+id/action_tabsSearchFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_tabsSearchFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_tabsSearchFragment_to_postDetailsFragment2"
+            app:destination="@id/postDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchLocationsFragment"
+        android:name="com.example.oktravelapplictaion.SearchLocationsFragment"
+        android:label="fragment_search_locations"
+        tools:layout="@layout/fragment_search_locations" />
+    <fragment
+        android:id="@+id/followFragment"
+        android:name="com.example.oktravelapplictaion.FollowFragment"
+        android:label="fragment_follow"
+        tools:layout="@layout/fragment_follow" >
+        <argument
+            android:name="followers_or_following"
+            app:argType="string" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_followFragment_to_anotherUserProfileFragment"
+            app:destination="@id/anotherUserProfileFragment" />
+        <action
+            android:id="@+id/action_followFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>
